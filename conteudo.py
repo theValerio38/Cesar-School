@@ -1,3 +1,5 @@
+#Constante
+
 ATIVIDADES = {
     "navegador": "Aula: usar o navegador",
     "anexar": "Quiz: anexar uma foto",

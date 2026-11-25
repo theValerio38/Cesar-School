@@ -57,4 +57,27 @@ def progresso(dados):
     print(f"\n=== Meu progresso: {len(feitas)} de {total} atividades ===")
     for chave, nome in ATIVIDADES.items():
         print(f"  [{'x' if chave in feitas else ' '}] {nome}")
-    input("\nAperte Enter para voltar. ")
+    choice = escolher(["Resetar o progresso. "])
+    if choice == 1:
+        certeza = input("Você tem certeza? Isso apagará todo o seu progresso. (s/n) ")
+        if certeza.lower() == "s":
+            dados["concluidas"] = []
+            salvar(dados)
+
+
+def alterar_nome(dados):
+    
+    if dados["nome"] == "amigo(a)":
+        nome = input(f"\nDigite o seu nome: ").strip()
+        if nome:
+            dados["nome"] = nome
+            salvar(dados)
+            print(f"Nome alterado para {nome}.")
+    else:
+        novo_nome = input("Digite seu novo nome: ").strip()
+        if novo_nome:
+            dados["nome"] = novo_nome
+            salvar(dados)
+            print(f"Nome alterado para {novo_nome}.")
+        else:
+            print("Nome não alterado.")

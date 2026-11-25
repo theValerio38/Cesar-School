@@ -2,12 +2,12 @@ import json
 from pathlib import Path
 from dados import carregar, salvar
 from entrada import escolher
-from telas import aula_navegador, quiz, pix, glossario, progresso
+from telas import aula_navegador, quiz, pix, glossario, progresso, alterar_nome
 ARQUIVO = Path(__file__).with_name("leila_dados.json")
 
 
 
-# ---------- programa ----------
+# Programa 
 
 def main():
     dados = carregar()
@@ -32,6 +32,7 @@ def main():
         ("Como fazer um Pix (aula)", lambda: pix(dados)),
         ("Glossário digital", glossario),
         ("Meu progresso", lambda: progresso(dados)),
+        ("Trocar Nome", lambda: alterar_nome(dados))
     ]
 
     while True:

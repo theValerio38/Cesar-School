@@ -1,3 +1,0 @@
-# CESAR-SCHOOL
-
-Ablubleble
